@@ -16,11 +16,12 @@
     "url": "https://github.com/catalin-luntraru/redux-minimal"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --history-api-fallback --host splashpoc.herokuapp.com/ --port 8080",
+    "//": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 80",
     "build-dev": "webpack --config webpack.dev.config.js",
     "build-prod": "webpack -p --config webpack.prod.config.js",
     "test": "mocha --recursive --compilers js:babel-register --require babel-polyfill --require ignore-styles",
-    "test-watch": "npm test -- --watch"
+    "test-watch": "npm test -- --watch",
+    "start": "node ./src_users.1/app.js"
   },
   "babel": {
     "presets": [
@@ -32,6 +33,7 @@
   "author": "Catalin Luntraru",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.15.3",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
@@ -41,7 +43,8 @@
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-form": "^6.4.3",
-    "redux-saga": "^0.14.3"
+    "redux-saga": "^0.14.3",
+    "webpack-hot-middleware": "^2.18.1"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
