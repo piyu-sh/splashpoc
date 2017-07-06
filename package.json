@@ -21,7 +21,8 @@
     "build-prod": "webpack -p --config webpack.prod.config.js",
     "test": "mocha --recursive --compilers js:babel-register --require babel-polyfill --require ignore-styles",
     "test-watch": "npm test -- --watch",
-    "start": "node ./src_users.1/server.js"
+    "start": "node ./src_users.1/server.js",
+    "postinstall": "npm run build-prod"
   },
   "babel": {
     "presets": [
