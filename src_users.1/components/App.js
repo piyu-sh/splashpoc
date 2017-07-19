@@ -14,29 +14,37 @@ export class App extends React.Component {
 
   componentDidMount(){
     var that=this;
-    this.refs.myvideo.addEventListener("ended", function(){
-            that.props.dispatch({type: 'USERS_FETCH_LIST'});
-    })
+    // this.refs.myvideo.addEventListener("ended", function(){
+    //         that.props.dispatch({type: 'USERS_FETCH_LIST'});
+    // })
+  }
+
+  loadHandler = () =>{
+    setTimeout(()=>{
+            this.props.dispatch({type: 'USERS_FETCH_LIST'});
+    },3000)
   }
   // render
   render() {
       var splashStyle={
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover'
+            position: 'absolute',
+            margin: 'auto',
+            top: '0',
+            left: '0',
+            right: '0',
+            bottom: '0',
        }
+       
     // show the loading state while we wait for the app to load
     const {users, children} = this.props;
     if (!users.length) {
       return (
         // <ProgressBar active now={100}/>
         <div className="fullscreen-bg">
-          <video className="fullscreen-bg__video" muted ref="myvideo" autoPlay="autoPlay" playsInline >
+          <img onLoad={this.loadHandler} style={splashStyle} src="media/changedsplash.gif"/>
+          {/*<video className="fullscreen-bg__video" muted ref="myvideo" autoPlay="autoPlay" playsInline >
           <source src="media/splash.mp4" type="video/mp4" />
-          </video>
+          </video>*/}
         </div>
       );
     }

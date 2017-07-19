@@ -44,6 +44,11 @@ th {
   left: 0;
   overflow: hidden;
   z-index: -100;
+  background: -webkit-rgb(239, 235, 244);
+  background: -o-rgb(239, 235, 244);
+  background: -ms-rgb(239, 235, 244);
+  background: -moz-rgb(239, 235, 244);
+  background: rgb(239, 235, 244);
 }
 
 .fullscreen-bg__video {
