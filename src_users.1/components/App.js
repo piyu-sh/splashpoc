@@ -41,7 +41,7 @@ export class App extends React.Component {
       return (
         // <ProgressBar active now={100}/>
         <div className="fullscreen-bg">
-          <img onLoad={this.loadHandler} style={splashStyle} src="media/changedsplash.gif"/>
+          <img onLoad={this.loadHandler} style={splashStyle} src="media/changedsplash2.gif"/>
           {/*<video className="fullscreen-bg__video" muted ref="myvideo" autoPlay="autoPlay" playsInline >
           <source src="media/splash.mp4" type="video/mp4" />
           </video>*/}
